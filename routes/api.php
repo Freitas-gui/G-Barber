@@ -17,11 +17,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post("/user", [UserController::class, "store"]);
-Route::post("/user/login", [UserController::class, "login"]);
+Route::post("/user", [UserController::class, "store"])->middleware('checkage');
+Route::post("/user/login", [UserController::class, "login"])->middleware('checkage');
 
-Route::post("/service", [ServiceController::class, "store"]);
-Route::get("/service", [ServiceController::class, "index"]);
+Route::post("/service", [ServiceController::class, "store"])->middleware('checkage');
+Route::get("/service", [ServiceController::class, "index"])->middleware('checkage');
 
-Route::post("/schedule", [ScheduleController::class, "store"]);
-Route::post("/schedule/index", [ScheduleController::class, "index"]);
+Route::post("/schedule", [ScheduleController::class, "store"])->middleware('checkage');
+Route::post("/schedule/index", [ScheduleController::class, "index"])->middleware('checkage');
